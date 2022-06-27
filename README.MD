@@ -20,15 +20,15 @@
 	
  설정 내용은 아래와 같다.
 	
-	```
-	properties.db.database=board
-	properties.db.userId={USR_ID}
-	properties.db.password={USER_PASSWORD}
-	properties.db.port=3306
-	properties.db.host=localhost
-	front.host=http://localhost
-	front.post=3000
-	```
+```
+properties.db.database=board
+properties.db.userId={USR_ID}
+properties.db.password={USER_PASSWORD}
+properties.db.port=3306
+properties.db.host=localhost
+front.host=http://localhost
+front.post=3000
+```
 	
  - 원하는 방향으로 DB를 만들어서 파일에 넣어 두면 WebMvcConfig에서 파일을 읽어 환경변수로 입력된다.
  - 그외 front client 관련 정보를 비롯한 것은 그대로 복붙하면 된다.
