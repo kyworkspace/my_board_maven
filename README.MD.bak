@@ -27,7 +27,7 @@ properties.db.password={USER_PASSWORD}
 properties.db.port=3306
 properties.db.host=localhost
 front.host=http://localhost
-front.post=3000
+front.port=3000
 ```
 	
  - 원하는 방향으로 DB를 만들어서 파일에 넣어 두면 WebMvcConfig에서 파일을 읽어 환경변수로 입력된다.

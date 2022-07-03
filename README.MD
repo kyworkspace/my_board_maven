@@ -32,5 +32,9 @@ front.port=3000
 	
  - 원하는 방향으로 DB를 만들어서 파일에 넣어 두면 WebMvcConfig에서 파일을 읽어 환경변수로 입력된다.
  - 그외 front client 관련 정보를 비롯한 것은 그대로 복붙하면 된다.
-	
+
+#### 2022-07-03 보드 업로드 기능 추가
+ - 업로드 기능 추가
+ - boardContents(blob) => boardContents(varchar(10000)) 으로 변경
+ 
 	

@@ -1,0 +1,38 @@
+-- board.board definition
+
+CREATE TABLE `board` (
+  `board_id` int NOT NULL AUTO_INCREMENT,
+  `board_title` varchar(100) DEFAULT NULL,
+  `board_contents` varchar(10000) DEFAULT NULL,
+  `user_id` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`board_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `board_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+-- board.`user` definition
+
+CREATE TABLE `user` (
+  `user_id` varchar(20) COLLATE utf8_bin NOT NULL,
+  `user_password` varchar(45) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+
+
+-- board.board_comment definition
+
+CREATE TABLE `board_comment` (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `comment_contents` varchar(1000) DEFAULT NULL,
+  `board_id` int DEFAULT NULL,
+  `user_id` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8_bin DEFAULT NULL,
+  `ref` int DEFAULT NULL,
+  `ref_step` int DEFAULT NULL,
+  PRIMARY KEY (`comment_id`),
+  KEY `board_id` (`board_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `board_comment_ibfk_1` FOREIGN KEY (`board_id`) REFERENCES `board` (`board_id`),
+  CONSTRAINT `board_comment_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
