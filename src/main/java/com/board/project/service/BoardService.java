@@ -1,10 +1,13 @@
 package com.board.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.board.project.entity.BoardEntity;
 import com.board.project.entity.BoardEntityDto;
+import com.board.project.entity.BoardEntityDto.Response;
 import com.board.project.repository.BoardRepository;
 
 @Service
@@ -20,7 +23,7 @@ public class BoardService {
 		try {
 			BoardEntity board = new BoardEntity();
 			
-			board.setUserId(parameter.getUserId());
+			board.setInsertUserId(parameter.getInsertUserId());
 			board.setBoardTitle(parameter.getBoardTitle());
 			board.setBoardContents(parameter.getBoardContents());
 			
@@ -31,7 +34,7 @@ public class BoardService {
 			res.setBoardId(board.getBoardId());
 			res.setBoardTitle(board.getBoardTitle());
 			res.setBoardContents(board.getBoardContents());
-			res.setUserId(board.getUserId());
+			res.setInsertUserId(board.getInsertUserId());
 		} catch (Exception e) {
 			e.printStackTrace();
 			res.setSuccess("false");
@@ -40,6 +43,14 @@ public class BoardService {
 		}
 		
 		return res;
+	}
+
+	public List<BoardEntity> getList(Integer pageNumber,Integer pageSize) {
+
+		
+//		List<BoardEntity> boardList =  boardRepository.findAll();
+		
+		return boardRepository.findAll();
 	}
 	
 	

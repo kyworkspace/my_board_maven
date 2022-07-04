@@ -22,7 +22,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Data
 @Table(name="board")
-public class BoardEntity {
+public class BoardEntity extends BaseEntity{
 	
 	@Id
 	@Column(name="board_id")
@@ -34,8 +34,5 @@ public class BoardEntity {
 	
 	@Column(name="board_contents")
 	private String boardContents;
-	
-	@Column(name="user_id")
-	private String userId;
 
 }

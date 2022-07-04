@@ -20,7 +20,6 @@ public class BoardEntityDto extends BaseDto{
 		private Long boardId;
 		private String boardTitle;
 		private String boardContents;
-		private String userId;
 		
 	}
 	
@@ -31,7 +30,6 @@ public class BoardEntityDto extends BaseDto{
 		private Long boardId;
 		private String boardTitle;
 		private String boardContents;
-		private String userId;
 		
 	}
 	
